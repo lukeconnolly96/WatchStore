@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Modelid:</strong>
+  <%= @model.modelid %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @model.gender %>
+</p>
+
+<p>
+  <strong>Movement:</strong>
+  <%= @model.movement %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @model.style %>
+</p>
+
+<p>
+  <strong>Colour:</strong>
+  <%= @model.colour %>
+</p>
+
+<p>
+  <strong>Waterresistant:</strong>
+  <%= @model.waterresistant %>
+</p>
+
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_model_path(@model) %> |
+<%= link_to 'Back', models_path %>

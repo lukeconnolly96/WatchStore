@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @customer.userid %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @customer.location %>
+</p>
+
+<p>
+  <strong>Purchases:</strong>
+  <%= @customer.purchases %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

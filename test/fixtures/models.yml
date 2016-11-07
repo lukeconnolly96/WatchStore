@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modelid: MyString
+  gender: MyString
+  movement: MyString
+  style: MyString
+  colour: MyString
+  waterresistant: false
+
+two:
+  modelid: MyString
+  gender: MyString
+  movement: MyString
+  style: MyString
+  colour: MyString
+  waterresistant: false

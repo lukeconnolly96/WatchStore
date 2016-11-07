@@ -1,0 +1,28 @@
+
+<h1>Welcome To Watch Reviews 4 U</h1>
+<p>This is a website with the latest reviews on the newest watches by our users</p>
+
+
+<h1><%= link_to "My Github", "https://github.com/lukeconnolly96"%></h1>
+<p>Luke Connolly C14373596</p>
+<p>Project name: WatchStore</p>
+<p><li><%= link_to "Github", "https://github.com/lukeconnolly96"%></li></p>
+
+
+<ul>
+<%= image_tag("brand.jpg", :size => "300x100")%>
+<li><%= link_to "Brands", brands_path %></li>
+<%= image_tag("customer.jpg", :size => "250x100") %>
+<li><%= link_to "Customers", customers_path %></li>
+<%= image_tag("model.jpg", :size => "300x100") %>
+<li><%= link_to "Models", models_path %></li>
+<%= image_tag("stars.jpg", :size => "300x500") %>
+<li><%= link_to "Ratings", ratings_path %></li>
+
+ </ul>
+
+
+ def current
+  ::Time.zone ? ::Time.zone.today : ::Date.today
+end
+

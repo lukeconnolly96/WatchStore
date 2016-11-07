@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Watchstore</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+  <ul class="nav nav-tabs">
+	<li><%= link_to "Home",  root_path %></li>
+	<li><%= link_to "Brands",  brands_path %></li>
+	<li><%= link_to "Customer",  customers_path %></li>
+	<li><%= link_to "Models",  models_path %></li>
+	<li><%= link_to "Rating",  ratings_path %></li>
+	<li><%= link_to "Admin",  users_path %></li>
+	<li><%= link_to "Github", "https://github.com/lukeconnolly96"%></li>
+	<li><%= mail_to "c14373596@mydit.ie", "Contact us" %></li>
+
+  </ul>
+
+<%= yield %>
+
+</div>
+
+
+
+</body>
+</html>
