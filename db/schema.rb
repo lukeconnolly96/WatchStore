@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106224750) do
+ActiveRecord::Schema.define(version: 20161214220152) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand"
@@ -19,23 +19,28 @@ ActiveRecord::Schema.define(version: 20161106224750) do
     t.boolean  "guarantee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "attachment"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "post_id"
-    t.integer  "user_id"
+    t.string   "content"
+    t.integer  "movie_id"
+    t.integer  "stars"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "customers", force: :cascade do |t|
     t.string   "userid"
     t.string   "location"
     t.string   "purchases"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float    "latitude"
+    t.float    "longitude"
+  end
+
+  create_table "messages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

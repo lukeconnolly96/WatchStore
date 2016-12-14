@@ -60,6 +60,17 @@ class BrandsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+	@brands = Brand.search params[:query]
+	unless @brands.empty? #if !@Brand.empty?
+		render 'index' #will only show records matching the search
+	else
+		flash[:notice] = 'No record matches that search'
+		render 'index' #will show all records
+	end
+end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +80,6 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:brand, :maker, :guarantee)
+      params.require(:brand).permit(:brand, :maker, :guarantee, :attachment)
     end
 end

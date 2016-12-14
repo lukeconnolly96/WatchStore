@@ -15,5 +15,16 @@
   <%= @customer.purchases %>
 </p>
 
+<p>
+  <strong>Latitude:</strong>
+  <%= @customer.latitude %>
+</p>
+
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
+
+<p>
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@customer.latitude},#{@customer.longitude}&markers=#{@customer.latitude},#{@customer.longitude}&zoom=7&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+              class: 'img-fluid img-rounded', alt: "#{@customer.location} on the map"%>
+</p>
+

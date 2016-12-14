@@ -8,6 +8,7 @@
       <th>Brand</th>
       <th>Maker</th>
       <th>Guarantee</th>
+	  <th>Watch Instructions</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= brand.brand %></td>
         <td><%= brand.maker %></td>
         <td><%= brand.guarantee %></td>
+		<td><%= link_to "Download File", brand.attachment_url %></td>
         <td><%= link_to 'Show', brand %></td>
         <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
         <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,3 +31,7 @@
 <br>
 
 <%= link_to 'New Brand', new_brand_path %>
+
+<h1> Search by Maker </h1>
+<%= render 'search' %>
+

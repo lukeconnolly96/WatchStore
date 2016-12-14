@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  #get 'admin/index'
+  resources :comments
+  get 'admin/index'
 
   #get 'sessions/new'
 
@@ -7,16 +8,23 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  resources :users
+  
   get 'welcome/homepage'
   get '/brands'=>'brands#index'
   get '/customers'=>'customers#index'
   get '/models'=>'models#index'
   get '/ratings'=>'ratings#index'
+  get '/users'=>'users#new'
 
+  
+	get 'contact', to: 'messages#new', as: 'contact'
+	post 'contact', to: 'messages#create'
+	get 'search', :to=> 'brands#search'
+
+  resources :users
   resources :customers
   resources :ratings
-  resources :models do
+  resources :rating do
 	resources :comments
 	end
   resources :brands
@@ -28,6 +36,7 @@ controller :sessions do
 	delete 'logout' => :destroy
 	end
   
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -64,8 +73,7 @@ controller :sessions do
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end

@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+ <div class="field">
+	<%= f.label :attachment %>
+	<%= f.file_field :attachment %>
+  </div>
   <div class="field">
     <%= f.label :brand %><br>
     <%= f.text_field :brand %>
@@ -27,3 +31,6 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+
+

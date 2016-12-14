@@ -1,21 +1,19 @@
 class CommentsController < ApplicationController
 
-	def create
-	@comment = @model.comments.create(params[:comment].permit(:content))
-	@comment.user_id = current_user.id
-	@comment.save
-	
-	if @comment.save
-		redirect_to model_path(@model)
-		else
-		render 'new'
-		end 
-	end
 
-	private 
-	
-	def find_model
-	@model = Model.find(params[:modelid])
-	end
+def create
+	@rating = Rating.find params[:model_id]
+	@comment = @rating.comments.new(comment_params)
+	@comment.save #saves the @comment
+	#object to the comments table
+	respond_to do |format|
+format.html { redirect_to @rating }
+ end
+end
+
+private
+def comment_params #This is the method which whitelists the data fields from the form
+ params.require(:comment).permit(:content, :model_id, :stars)
+end
 
 end

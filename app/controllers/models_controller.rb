@@ -9,9 +9,7 @@ class ModelsController < ApplicationController
 
   # GET /models/1
   # GET /models/1.json
-  def show
-	@comments = comment.where(modelid: @model).order("created_at DESC")
-  end
+  
 
   # GET /models/new
   def new
